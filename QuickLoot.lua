@@ -257,7 +257,7 @@ function QuickLoot_ChatCommandHandler(msg)
 		varText = QUICKLOOT_CHAT_COMMAND_MOVE_ONCE;
 	end
 	if ( varName ) then
-		local oldValue = getglobal(varName);
+		local curValue = getglobal(varName);
 		local newValue = nil;
 		if ( ( not curValue ) or ( curValue == 0 ) ) then
 			newValue = 1;
