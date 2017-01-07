@@ -197,7 +197,7 @@ function QuickLoot_OnLoad()
 	-- Don't treat the LootFrame as a UI panel
 	UIPanelWindows["LootFrame"] = nil;
 
-	if ( not QuickLoot_RegisterUltimateUI() ) then
+	if ( not pcall(QuickLoot_RegisterUltimateUI) ) then
 		SlashCmdList["QUICKLOOTSLASH"] = QuickLoot_ChatCommandHandler;
 		SLASH_QUICKLOOTSLASH1 = "/quickloot";
 	end
