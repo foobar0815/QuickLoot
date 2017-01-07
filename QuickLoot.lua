@@ -4,7 +4,7 @@
 		copyright 2004 by Telo
 
 	- Automatically positions the most relevant part of the loot window under your cursor
-	
+
 ]]
 
 --------------------------------------------------------------------------------------------------
@@ -35,13 +35,13 @@ local function LootFrame_SetLootFramePoint(x, y)
 			screenWidth = UIParent:GetWidth();
 		end
 		local screenHeight = GetScreenHeight();
-		
+
 		-- LootFrame is set to 256 wide in the xml file, but is actually only 191 wide
 		-- This is based on calculation envolving the offset on the close button:
 		-- The height is always 256, which is the correct number.
 		local windowWidth = 191;
 		local windowHeight = 256;
-		
+
 		if ( (x + windowWidth) > screenWidth ) then
 			x = screenWidth - windowWidth;
 		end
@@ -56,7 +56,7 @@ local function LootFrame_SetLootFramePoint(x, y)
 		end
 		--Print("wWith: "..windowWidth..", wHeight: "..windowHeight..", X: "..x..", Y: "..y..", sWidth: "..screenWidth..", sHeight: "..screenHeight);
 	end
-	
+
 	LootFrame:ClearAllPoints();
 	LootFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", x, y);
 end
@@ -94,7 +94,7 @@ function LootFrame_ItemUnderCursor()
 		x = x - 173;
 		y = y + 25;
 	end
-	
+
 	LootFrame:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", x, y);
 end
 
@@ -146,7 +146,7 @@ function QuickLoot_RegisterUltimateUI()
 			);
 			UltimateUI_RegisterConfiguration(
 				"UUI_QUICKLOOT_ONOFF",
-				"CHECKBOX", 
+				"CHECKBOX",
 				TEXT(ULTIMATEUI_CONFIG_QLOOT),
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_INFO),
 				QuickLoot_Enable,
@@ -154,7 +154,7 @@ function QuickLoot_RegisterUltimateUI()
 			);
 			UltimateUI_RegisterConfiguration(
 				"UUI_QUICKLOOT_HIDE",
-				"CHECKBOX", 
+				"CHECKBOX",
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_HIDE),
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_HIDE_INFO),
 				QuickLoot_Hide_Enable,
@@ -162,7 +162,7 @@ function QuickLoot_RegisterUltimateUI()
 			);
 			UltimateUI_RegisterConfiguration(
 				"UUI_QUICKLOOT_ONSCREEN",
-				"CHECKBOX", 
+				"CHECKBOX",
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_ONSCREEN),
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_ONSCREEN_INFO),
 				QuickLoot_OnScreen_Enable,
@@ -170,7 +170,7 @@ function QuickLoot_RegisterUltimateUI()
 			);
 			UltimateUI_RegisterConfiguration(
 				"UUI_QUICKLOOT_MOVE_ONCE",
-				"CHECKBOX", 
+				"CHECKBOX",
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_MOVE_ONCE),
 				TEXT(ULTIMATEUI_CONFIG_QLOOT_MOVE_ONCE_INFO),
 				QuickLoot_MoveOnce_Enable,
@@ -189,11 +189,11 @@ function QuickLoot_OnLoad()
 	-- Hook the LootFrame_OnEvent function
 	originalLootFrame_OnEvent = LootFrame_OnEvent;
 	LootFrame_OnEvent = QuickLoot_LootFrame_OnEvent;
-	
+
 	-- Hook the LootFrame_Update function
 	originalLootFrame_Update = LootFrame_Update;
 	LootFrame_Update = QuickLoot_LootFrame_Update;
-	
+
 	-- Don't treat the LootFrame as a UI panel
 	UIPanelWindows["LootFrame"] = nil;
 
@@ -203,34 +203,34 @@ function QuickLoot_OnLoad()
 	end
 end
 
-function QuickLoot_Enable(toggle) 
-	if ( toggle == 1 ) then 
+function QuickLoot_Enable(toggle)
+	if ( toggle == 1 ) then
 		QuickLoot_Enabled = 1;
-	else 
+	else
 		QuickLoot_Enabled = 0;
 	end
 end
 
-function QuickLoot_Hide_Enable(toggle) 
-	if ( toggle == 1 ) then 
+function QuickLoot_Hide_Enable(toggle)
+	if ( toggle == 1 ) then
 		QuickLoot_AutoHide = 1;
-	else 
+	else
 		QuickLoot_AutoHide = nil;
 	end
 end
 
-function QuickLoot_OnScreen_Enable(toggle) 
-	if ( toggle == 1 ) then 
+function QuickLoot_OnScreen_Enable(toggle)
+	if ( toggle == 1 ) then
 		QuickLoot_OnScreen = 1;
-	else 
+	else
 		QuickLoot_OnScreen = nil;
 	end
 end
 
 function QuickLoot_MoveOnce_Enable(toggle)
-	if ( toggle == 1 ) then 
+	if ( toggle == 1 ) then
 		QuickLoot_MoveOnce = 1;
-	else 
+	else
 		QuickLoot_MoveOnce = nil;
 	end
 end
@@ -281,7 +281,7 @@ function QuickLoot_ChatCommandHandler(msg)
 	end
 end
 
-function QuickLoot_Print(msg) 
+function QuickLoot_Print(msg)
 	if ( ( msg ) and ( strlen(msg) > 0 ) ) then
 		if( Print ) then
 			Print(msg);
@@ -292,4 +292,3 @@ function QuickLoot_Print(msg)
 		end
 	end
 end
-

@@ -8,14 +8,14 @@ if ( GetLocale() == "frFR" ) then
 	ULTIMATEUI_CONFIG_QLOOT_HEADER_INFO		= "Le Loot Rapide va d\195\169placer la fen\195\170tre de loot sous votre curseur lorsqu\'elle s\'ouvre, et elle se d\195\169place \195\160 chaque fois que vous prennez un objet.";
 	ULTIMATEUI_CONFIG_QLOOT			= "Cliquer ici pour activer le Loot Rapide.";
 	ULTIMATEUI_CONFIG_QLOOT_INFO		= "Le Loot Rapide va d\195\169placer la fen\195\170tre de loot sous votre curseur lorsqu\'elle s\'ouvre, et elle se d\195\169place \195\160 chaque fois que vous prennez un objet.";
-	ULTIMATEUI_CONFIG_QLOOT_HIDE		= "Fermer automatiquement la fen\195\170tre quand vide.";	
+	ULTIMATEUI_CONFIG_QLOOT_HIDE		= "Fermer automatiquement la fen\195\170tre quand vide.";
 	ULTIMATEUI_CONFIG_QLOOT_HIDE_INFO		= "Si il n\'y a aucun objets dans la fen\195\170tre de loots, celle-ci va \195\170tre automatiquement ferm\195\169e si cette option est activ\195\169e.";
 	ULTIMATEUI_CONFIG_QLOOT_ONSCREEN		= "Toujours afficher la fen\195\170tre de loot m\195\170me en dehors de l\'\195\169cran.";
 	ULTIMATEUI_CONFIG_QLOOT_ONSCREEN_INFO	= "Si cette option est activ\195\169e, la fen\195\170tre de loot ne sortira plus jamais de l\'\195\169cran.";
-	
+
 	ULTIMATEUI_CONFIG_QLOOT_MOVE_ONCE		= "D\195\169placer la fen\195\170tre sur la Souris.";
 	ULTIMATEUI_CONFIG_QLOOT_MOVE_ONCE_INFO	= "Lorsque l'option est activ\195\169e, Loot Rapide ne d\195\169placera pas la fen\195\170tre plus d\'une fois.";
-	
+
 -- Chat Configuration
 	ERR_LOOT_NONE				= "Il n\'y avait aucun objet !";
 
@@ -28,5 +28,5 @@ if ( GetLocale() == "frFR" ) then
 
 	QUICKLOOT_CHAT_STATE_ENABLED		= " Activ\195\169";
 	QUICKLOOT_CHAT_STATE_DISABLED		= " D\195\169sactiv\195\169";
-	
+
 end
